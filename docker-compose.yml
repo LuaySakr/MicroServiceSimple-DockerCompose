@@ -41,8 +41,8 @@ services:
     build: ../ItemAPI
     image: item-api
     environment:
-      BigItem_API_PORT: 8082
-      Called_API_URL: http://item-api:8082/smallitems
+      Vehicle_API_PORT: 8082
+      Called_API_URL: http://item-api:8082/vehicles
 
       # ZIPKIN_URL: http://zipkin:9411/api/v2/spans
     ports:
@@ -53,10 +53,10 @@ services:
 
 
   customer-api:
-    build: ../Customer
+    build: ../MicroServiceSimple-Customer
     image: customer-api
     environment:
-      BigItem_API_PORT: 7001
+      Vehicle_API_PORT: 7001
       
 
       # ZIPKIN_URL: http://zipkin:9411/api/v2/spans
