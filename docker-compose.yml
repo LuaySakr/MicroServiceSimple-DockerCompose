@@ -1,0 +1,136 @@
+version: "3"
+services:
+
+  mongodb:
+    image: mongo
+    container_name: mongodb-container
+    ports:
+      - 27017:27017
+
+  # zipkin-storage:
+  #   image: openzipkin/zipkin-mysql
+    
+  #   ports:
+  #     - 3306:3306
+
+
+
+  zipkin:
+    image: openzipkin/zipkin
+    # container_name: zipkin
+    environment:
+      # - STORAGE_TYPE=mysql
+      # Point the zipkin at the storage backend
+      # - MYSQL_HOST=mysql
+      # Uncomment to enable self-tracing
+      - SELF_TRACING_ENABLED=false
+      # Uncomment to enable debug logging
+      # - JAVA_OPTS=-Dlogging.level.zipkin=DEBUG -Dlogging.level.zipkin2=DEBUG
+    ports:
+      # Port used for the Zipkin UI and HTTP Api
+      - 9411:9411
+      # Uncomment if you set SCRIBE_ENABLED=true
+      # - 9410:9410
+    depends_on:
+      - mongodb
+      # - zipkin-storage
+
+
+
+  item-api:
+    build: ../ItemAPI
+    image: item-api
+    environment:
+      BigItem_API_PORT: 8082
+      Called_API_URL: http://item-api:8082/smallitems
+
+      # ZIPKIN_URL: http://zipkin:9411/api/v2/spans
+    ports:
+      - 8082:8082
+
+
+  customer-api:
+    build: ../Customer
+    image: customer-api
+    environment:
+      BigItem_API_PORT: 7001
+      
+
+      # ZIPKIN_URL: http://zipkin:9411/api/v2/spans
+    ports:
+      - 7001:7001
+      
+    depends_on:
+      - zipkin
+      - mongodb
+
+      
+
+      
+      
+  # frontend:
+  #   build: ./frontend
+  #   image: frontend
+  #   environment:
+  #     PORT: 8080
+  #     AUTH_API_ADDRESS: http://auth-api:8081
+  #     TODOS_API_ADDRESS: http://todos-api:8082
+  #     ZIPKIN_URL: http://zipkin:9411/api/v2/spans
+  #   ports:
+  #     - 8080:8080
+  #   depends_on:
+  #     - zipkin
+  #     - auth-api
+  #     - todos-api
+  #     - users-api
+
+  # auth-api:
+  #   build: ./auth-api
+  #   image: auth-api
+  #   environment:
+  #     AUTH_API_PORT: 8081
+  #     JWT_SECRET: myfancysecret
+  #     USERS_API_ADDRESS: http://users-api:8083
+  #     ZIPKIN_URL: http://zipkin:9411/api/v2/spans
+  #   depends_on:
+  #     - zipkin
+  #     - users-api
+
+  # todos-api:
+  #   build: ./todos-api
+  #   image: todos-api
+  #   environment:
+  #     TODO_API_PORT: 8082
+  #     JWT_SECRET: myfancysecret
+  #     REDIS_HOST: redis-queue
+  #     REDIS_PORT: 6379
+  #     REDIS_CHANNEL: log_channel
+  #     ZIPKIN_URL: http://zipkin:9411/api/v2/spans
+  #   depends_on:
+  #     - zipkin
+  #     - redis-queue
+
+  # users-api:
+  #   build: ./users-api
+  #   image: users-api
+  #   environment:
+  #    SERVER_PORT: 8083
+  #    JWT_SECRET: myfancysecret
+  #    SPRING_ZIPKIN_BASE_URL: http://zipkin:9411
+  #   depends_on:
+  #     - zipkin
+     
+  # log-message-processor:
+  #   build: ./log-message-processor
+  #   image: log-message-processor
+  #   environment:
+  #     REDIS_HOST: redis-queue
+  #     REDIS_PORT: 6379
+  #     REDIS_CHANNEL: log_channel
+  #     ZIPKIN_URL: http://zipkin:9411/api/v1/spans
+  #   depends_on:
+  #     - zipkin
+  #     - redis-queue
+  
+
+
