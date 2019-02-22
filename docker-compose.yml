@@ -87,15 +87,17 @@ services:
       
 
       
-  dashboard-api:
-    build: ../MicroServiceSimple-Dashboard
-    image: dashboard-api
-    ports:
-      - 7004:7004
-      - 8004:8004      
-    depends_on:
-      - -
-      - mongodb
+  # dashboard-api:
+  #   build: ../MicroServiceSimple-Dashboard
+  #   image: dashboard-api
+  #   environment:
+  #     NODE_ENV : docker    
+  #   ports:
+  #     - 7004:7004
+  #     - 8004:8004      
+  #   depends_on:
+  #     - zipkin
+  #     - mongodb
       
 
       
