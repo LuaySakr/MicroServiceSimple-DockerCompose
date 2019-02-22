@@ -94,7 +94,7 @@ services:
       - 7004:7004
       - 8004:8004      
     depends_on:
-      - zipkin
+      - -
       - mongodb
       
 
