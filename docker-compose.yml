@@ -55,21 +55,49 @@ services:
   customer-api:
     build: ../MicroServiceSimple-Customer
     image: customer-api
-    environment:
-      Vehicle_API_PORT: 7001
-      
-
-      # ZIPKIN_URL: http://zipkin:9411/api/v2/spans
     ports:
       - 7001:7001
-      
+      - 8001:8001
     depends_on:
       - zipkin
       - mongodb
 
       
+  vehicle-api:
+    build: ../MicroServiceSimple-Vehicle
+    image: vehicle-api
+    ports:
+      - 7002:7002
+      - 8002:8002      
+    depends_on:
+      - zipkin
+      - mongodb
+      
 
       
+  vehicleowner-api:
+    build: ../MicroServiceSimple-VehicleOwner
+    image: vehicleowner-api
+    ports:
+      - 7003:7003
+      - 8003:8003      
+    depends_on:
+      - zipkin
+      - mongodb
+      
+
+      
+  dashboard-api:
+    build: ../MicroServiceSimple-Dashboard
+    image: dashboard-api
+    ports:
+      - 7004:7004
+      - 8004:8004      
+    depends_on:
+      - zipkin
+      - mongodb
+      
+
       
   # frontend:
   #   build: ./frontend
