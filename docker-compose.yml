@@ -23,7 +23,7 @@ services:
       # Point the zipkin at the storage backend
       # - MYSQL_HOST=mysql
       # Uncomment to enable self-tracing
-      - SELF_TRACING_ENABLED=false
+      - SELF_TRACING_ENABLED=true
       # Uncomment to enable debug logging
       # - JAVA_OPTS=-Dlogging.level.zipkin=DEBUG -Dlogging.level.zipkin2=DEBUG
     ports:
@@ -75,31 +75,44 @@ services:
       
 
       
-  # vehicleowner-api:
-  #   build: ../MicroServiceSimple-VehicleOwner
-  #   image: vehicleowner-api
-  #   ports:
-  #     - 7003:7003
-  #     - 8003:8003      
-  #   depends_on:
-  #     - zipkin
-  #     - mongodb
+  vehicleowner-api:
+    build: ../MicroServiceSimple-VehicleOwner
+    image: vehicleowner-api
+    ports:
+      - 7003:7003
+      - 8003:8003      
+    depends_on:
+      - zipkin
+      - mongodb
       
 
       
-  # dashboard-api:
-  #   build: ../MicroServiceSimple-Dashboard
-  #   image: dashboard-api
-  #   environment:
-  #     NODE_ENV : docker    
-  #   ports:
-  #     - 7004:7004
-  #     - 8004:8004      
-  #   depends_on:
-  #     - zipkin
-  #     - mongodb
+  dashboard-api:
+    build: ../MicroServiceSimple-Dashboard
+    image: dashboard-api
+    environment:
+      NODE_ENV : docker    
+    ports:
+      - 7004:7004
+      - 8004:8004      
+    depends_on:
+      - zipkin
+      - mongodb
       
 
+       
+  pulsworker-api:
+    build: ../MicroServiceSimple-Pulsworker
+    image: pulsworker-api
+    environment:
+      NODE_ENV : docker    
+    ports:
+      - 7005:7005
+      - 8005:8005      
+    depends_on:
+      - zipkin
+      - mongodb
+      - vehicleowner-api
       
   # frontend:
   #   build: ./frontend
