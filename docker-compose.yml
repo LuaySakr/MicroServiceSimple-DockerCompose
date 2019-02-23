@@ -75,15 +75,15 @@ services:
       
 
       
-  vehicleowner-api:
-    build: ../MicroServiceSimple-VehicleOwner
-    image: vehicleowner-api
-    ports:
-      - 7003:7003
-      - 8003:8003      
-    depends_on:
-      - zipkin
-      - mongodb
+  # vehicleowner-api:
+  #   build: ../MicroServiceSimple-VehicleOwner
+  #   image: vehicleowner-api
+  #   ports:
+  #     - 7003:7003
+  #     - 8003:8003      
+  #   depends_on:
+  #     - zipkin
+  #     - mongodb
       
 
       
