@@ -18,6 +18,7 @@ we going to create it using microservice archeticture as it will help us into mu
 #### scalability
 #### containraization 
 #### independancy 
+#### tracability
 
 
 
