@@ -43,6 +43,8 @@ sh up.sh
 
 # If you need to run the current version without cloning latest repositories
 docker-compose up --build
+dashboard url localhost:7004
+Zipkin url localhost:9411
 
 
 
