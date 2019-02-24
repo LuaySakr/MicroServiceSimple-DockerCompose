@@ -4,6 +4,14 @@ services:
   mongodb:
     image: mongo
     container_name: mongodb-container
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
     ports:
       - 27017:27017
 
@@ -17,6 +25,14 @@ services:
 
   zipkin:
     image: openzipkin/zipkin
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
     # container_name: zipkin
     environment:
       # - STORAGE_TYPE=mysql
@@ -55,6 +71,14 @@ services:
   customer-api:
     build: ./MicroServiceSimple-Customer
     image: customer-api
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
     ports:
       - 7001:7001
       - 8001:8001
@@ -66,6 +90,14 @@ services:
   vehicle-api:
     build: ./MicroServiceSimple-Vehicle
     image: vehicle-api
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
     ports:
       - 7002:7002
       - 8002:8002      
@@ -78,6 +110,14 @@ services:
   vehicleowner-api:
     build: ./MicroServiceSimple-VehicleOwner
     image: vehicleowner-api
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
     ports:
       - 7003:7003
       - 8003:8003      
@@ -90,6 +130,14 @@ services:
   dashboard-api:
     build: ./MicroServiceSimple-Dashboard
     image: dashboard-api
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
     environment:
       NODE_ENV : docker    
     ports:
@@ -104,6 +152,14 @@ services:
   pulsworker-api:
     build: ./MicroServiceSimple-Pulsworker
     image: pulsworker-api
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
     environment:
       NODE_ENV : docker    
     ports:
