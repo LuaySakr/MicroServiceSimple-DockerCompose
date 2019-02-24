@@ -70,3 +70,134 @@ so far it is pipeline job to run docker build to make sure the repository has no
 regarding docker-compose repository it also has its own Jenkinsfile to run Groovy pipeline script to do up.sh activities
 
 Enjoy :)
+
+system screenshots
+
+<img src=""></img>
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-06-14.png"></img>
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-06-51.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-07-05.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-07-13.png"></img>
+
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-07-29.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-07-36.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-08-00.png"></img>
+
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-14-38.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-16-26.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-16-44.png"></img>
+
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-17-08.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-30-11.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-30-18.png"></img>
+
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-30-28.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-31-35.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-31-42.png"></img>
+
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-32-43.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-33-16.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-33-19.png"></img>
+
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-35-56.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-36-05.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-36-17.png"></img>
+
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-36-28.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-38-47.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-38-59.png"></img>
+
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-49-39.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-49-49.png"></img>
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-50-04.png"></img>
+
+
+
+
+
+<img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-50-17.png"></img>
+
+
+
+
