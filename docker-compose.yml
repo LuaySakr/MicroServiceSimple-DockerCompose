@@ -37,23 +37,23 @@ services:
 
 
 
-  item-api:
-    build: ../ItemAPI
-    image: item-api
-    environment:
-      Vehicle_API_PORT: 8082
-      Called_API_URL: http://item-api:8082/vehicles
+  # item-api:
+  #   build: ./ItemAPI
+  #   image: item-api
+  #   environment:
+  #     Vehicle_API_PORT: 8082
+  #     Called_API_URL: http://item-api:8082/vehicles
 
-      # ZIPKIN_URL: http://zipkin:9411/api/v2/spans
-    ports:
-      - 2000:2000
-    depends_on:
-      - mongodb
-      - zipkin   
+  #     # ZIPKIN_URL: http://zipkin:9411/api/v2/spans
+  #   ports:
+  #     - 2000:2000
+  #   depends_on:
+  #     - mongodb
+  #     - zipkin   
 
 
   customer-api:
-    build: ../MicroServiceSimple-Customer
+    build: ./MicroServiceSimple-Customer
     image: customer-api
     ports:
       - 7001:7001
@@ -64,7 +64,7 @@ services:
 
       
   vehicle-api:
-    build: ../MicroServiceSimple-Vehicle
+    build: ./MicroServiceSimple-Vehicle
     image: vehicle-api
     ports:
       - 7002:7002
@@ -76,7 +76,7 @@ services:
 
       
   vehicleowner-api:
-    build: ../MicroServiceSimple-VehicleOwner
+    build: ./MicroServiceSimple-VehicleOwner
     image: vehicleowner-api
     ports:
       - 7003:7003
@@ -88,7 +88,7 @@ services:
 
       
   dashboard-api:
-    build: ../MicroServiceSimple-Dashboard
+    build: ./MicroServiceSimple-Dashboard
     image: dashboard-api
     environment:
       NODE_ENV : docker    
@@ -102,7 +102,7 @@ services:
 
        
   pulsworker-api:
-    build: ../MicroServiceSimple-Pulsworker
+    build: ./MicroServiceSimple-Pulsworker
     image: pulsworker-api
     environment:
       NODE_ENV : docker    
