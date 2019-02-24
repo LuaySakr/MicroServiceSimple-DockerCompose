@@ -21,3 +21,52 @@ we going to create it using microservice architecture as it will help us into mu
 
 
 <img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/Connected%20Vehicle%20Platform.jpg"></img>
+
+
+
+in this hi-level daigaram we are design the platfrom to two types of users on of them is the monitoring user and the other one is the creator himself, to help him to trace the microservice requests and improve his design.
+we have dashboard service to the monitoring user to use it as web and responsive application, from this dashboard he can add and delete some customers, vehicle, and vehicle owners to assigne vehicle to customer 
+the next services are customer, vehicle and vehicle owner services. Each one has its own data storage which is mongo database so far, 
+they are very basic and normal node js services as well as dashboard,
+also we have puls worker, it is node js api to act as gateway between vehicles and the system, vehicle should send its signals to puls worker service and we should rename it to match this job however it is currents acts as application gateway AND vehicles itselfs, as we doesnot have vehicles with signal so far.
+this service recurring send to vehicle owner service runtime update about vehicle status to check the system functionality
+
+finally we have Zipkin as tracer, all services we have send each and every request to Zipkin to log it and let us trace the services communications
+
+each service has its own repository on GitHub and this repository only for docker-compose file
+it has up.sh script that cloning the rest of services from github and run docker-compose up --build to make system up and runing 
+
+so 
+# How To Start?
+simply clone this repo and run 
+
+sh up.sh 
+
+
+# If you need to run the current version without cloning latest repositories
+docker-compose up --build
+
+
+
+# Test 
+each service included in this project has its own unit test cases and you can run it using
+npm install
+npm test
+also each dockerfile has its own npm test step to help in CI/CD activity 
+
+
+# Install
+if you want to run specific service as stand-alone service without docker-compose file
+
+npm install 
+npm start
+
+# CI/CD
+we are using jenkins as CI/CD tool over AWS and its configuration is already on repositories in Jenkinsfile and jenkins just call it to maintain CI/CD scripts using GitHub
+
+so far it is pipeline job to run docker build to make sure the repository has no coding issue using npm install step and no business valuations using npm test step
+
+
+regarding docker-compose resposatpry it also has its own Jenkinsfile to run Grovy pipeline script to do up.sh activities
+
+Enjoy :)
