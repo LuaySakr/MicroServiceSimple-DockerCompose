@@ -71,6 +71,14 @@ regarding docker-compose repository it also has its own Jenkinsfile to run Groov
 
 Enjoy :)
 
+ <a href="http://ec2-3-83-162-111.compute-1.amazonaws.com:7004/VehicleOwners">Demo!</a> 
+
+ <a href="http://ec2-3-83-162-111.compute-1.amazonaws.com:9411">Tracing!</a> 
+
+
+
+
+
 system screenshots
 
 <img src=""></img>
