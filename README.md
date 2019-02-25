@@ -67,6 +67,7 @@ each service included in this project has its own unit test cases and you can ru
 
 `
 npm install
+
 npm test
 `
 
@@ -80,6 +81,8 @@ if you want to run specific service as stand-alone service without docker-compos
 
 `
 npm install 
+
+
 npm start
 `
 
