@@ -38,15 +38,23 @@ it has up.sh script that cloning the rest of services from GitHub and run docker
 so 
 # How To Start?
 simply clone this repo and run 
+
+
 `
 sh up.sh 
 `
 
+
+
 # If you need to run the current version without cloning latest repositories
+
+
 
 `
 docker-compose up --build
 `
+
+
 
 dashboard url localhost:7004
 Zipkin url localhost:9411
@@ -55,19 +63,27 @@ Zipkin url localhost:9411
 
 # Test 
 each service included in this project has its own unit test cases and you can run it using
+
+
 `
 npm install
 npm test
 `
+
+
 also, each dockerfile has its own npm test step to help in CI/CD activity 
 
 
 # Install
 if you want to run specific service as stand-alone service without docker-compose file
+
+
 `
 npm install 
 npm start
 `
+
+
 # CI/CD
 we are using Jenkins as CI/CD tool over AWS and its configuration is already on repositories in Jenkinsfile and Jenkins just call it to maintain CI/CD scripts using GitHub
 
@@ -88,7 +104,6 @@ Enjoy :)
 
 system screenshots
 
-<img src=""></img>
 
 <img src="https://raw.githubusercontent.com/LuaySakr/MicroServiceSimple-DockerCompose/master/imgs/Screenshot%20from%202019-02-24%2023-06-14.png"></img>
 
